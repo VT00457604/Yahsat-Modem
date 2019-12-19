@@ -1,0 +1,55 @@
+{
+  "_from": "cordova-plugin-webintent",
+  "_id": "cordova-plugin-webintent@0.0.2",
+  "_inBundle": false,
+  "_integrity": "sha1-BPilGUKRUzUgR6mwXYwM09gYVfA=",
+  "_location": "/cordova-plugin-webintent",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-webintent",
+    "name": "cordova-plugin-webintent",
+    "escapedName": "cordova-plugin-webintent",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-webintent/-/cordova-plugin-webintent-0.0.2.tgz",
+  "_shasum": "04f8a519429153352047a9b05d8c0cd3d81855f0",
+  "_spec": "cordova-plugin-webintent",
+  "_where": "D:\\yahsat\\YahsatApi",
+  "author": {
+    "name": "Boris Smus, Eduardo Adams Wohlfahrt",
+    "email": "eduardowohlfahrt@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/eduardoaw/cordova-webintent/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "WebIntent Android Plugin for Cordova 3.X By Boris Smus",
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "homepage": "https://github.com/eduardoaw/cordova-webintent#readme",
+  "keywords": [
+    "webintent",
+    "boris smus",
+    "cordova"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-webintent",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduardoaw/cordova-webintent.git"
+  },
+  "tags": [
+    "cordova"
+  ],
+  "version": "0.0.2"
+}

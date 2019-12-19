@@ -1,0 +1,44 @@
+{
+  "name": "com.techm.yahsatretail",
+  "displayName": "HelloCordova",
+  "version": "1.0.0",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Apache Cordova Team",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "com.lampa.startapp": "^6.1.6",
+    "cordova-android": "^6.3.0",
+    "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-globalization": "^1.11.0",
+    "cordova-plugin-network-information": "^2.0.1",
+    "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-statusbar": "^2.4.2",
+    "cordova-plugin-webintent": "0.0.2",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "phonegap-plugin-barcodescanner": "^8.0.0",
+    "com.borismus.webintent": "~1.0.0"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "com.borismus.webintent": {},
+      "com.lampa.startapp": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-globalization": {},
+      "cordova-plugin-network-information": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-statusbar": {},
+      "phonegap-plugin-barcodescanner": {
+        "CAMERA_USAGE_DESCRIPTION": "To scan barcodes",
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      }
+    },
+    "platforms": [
+      "android"
+    ]
+  }
+}

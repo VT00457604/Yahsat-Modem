@@ -1,0 +1,768 @@
+html, body {
+    -moz-user-select:none;
+    -webkit-user-select:none;
+    height:100%;
+    min-height:100%;
+    margin:0;
+    padding:0;
+}
+
+@font-face {
+    font-family: Futura;
+    src: url(../fonts/FUTURA_STD_MEDIUM.TTF);
+}
+
+.header-div{
+    background-color: #005030;
+    height: 120px;
+}
+
+.menu-icon{
+    background: url(../img/menu_icon.png) no-repeat;
+    height: 65px;
+    width: 100px;
+    margin: 10px 0 0 15px;
+}
+
+.header-title{
+    font-family: futura;
+    margin-left: 10px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.headercont-div{
+    margin-top:25px !important;
+}
+
+.header-pane{
+    display:none;
+    padding-left: 35px;
+    margin-top: 8px;
+}
+.header-img{
+    width:20px;
+}
+.nav-pane{
+    display: inline-block;
+    padding: 4px 9px;
+    border-radius: 50%;
+    border: solid 2px #ffffff;
+    color: #ffffff;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+    cursor: default;
+}
+
+.top-bar{
+    width:36%;
+}
+.paneimg{
+    width: 100%;
+    float: left;
+    margin-top: -15px;
+    margin-left: 28px;
+}
+.nav-text{
+    padding-top: 10px;
+    margin-left: -8px;
+}
+
+.footer {
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #27a5f2;
+    position: fixed;
+}
+
+.footerdiv{
+    margin: 16px auto;
+}
+.footertxt{
+  color:#ffffff;
+  font-size: 15px;
+}
+.footer-img{
+  width: 20px;
+}
+.loader-div{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:999999;
+    background-color:grey;
+    opacity: .5;
+}
+.loader-img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -32px; /* -1 * image width / 2 */
+    margin-top: -32px;  /* -1 * image height / 2 */
+    display: block; 
+}
+.curvtxt-div{
+    font-family: futura;
+    padding-top: 10px;
+    font-size: 12px;
+    color:#ffffff;
+    display: block;
+}
+.curv-text{
+    color:#ffffff;
+}
+.content-div{
+    margin: 10px 0;
+}
+.content-span{
+    color: #005030;
+    padding-left: 2px;
+    font-family: futura;
+    font-weight: bold;
+    font-size: 16px;
+}
+.step-div{
+    margin-left:0px;
+}
+.step-txt{
+    color: #222222;
+    font-family: futura;
+}
+.content-img{
+    width:100%;
+    display: block;
+    margin: 0 auto;
+}
+.img-txt{
+    color: #222222;
+    display: block;
+    margin: 0 auto;
+    padding-top: 20px;
+    font-family:futura;
+}
+.img-title{
+    font-size: 15px !important;
+    text-align: center;
+}
+.barDiv{
+    position: relative;
+    height: 100px;
+    top: 50px;
+}
+.bar1Div{
+    position: absolute;
+    top: 80%;
+    left: -30px;
+}
+.bar2Div{
+    position: absolute;
+    left: 10%;
+}
+.bar3Div{
+    position: absolute;
+    right: 162px;
+    top: 80%;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin-top: -40px;
+    background: #fff;
+    border-radius: 5px;
+    height: 100%;
+    font-family: futura;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    overflow: hidden;
+    padding-bottom: 40px;
+    overflow-y: scroll; 
+}
+.paddingLeft5{
+    padding-left:5px;
+}
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+    /* padding: 2px 16px;*/
+   height: -webkit-calc(100% - 120px);
+   height: -moz-calc(100% - 120px);
+   height: calc(100% - 120px);
+}
+.app-content{
+    /* position: absolute; */
+    width: 100%;
+    background: #fff !important;
+    z-index: 999 !important;
+}
+.app-container{
+    padding: 30px;
+}
+.step-row{
+    font-size: 15px !important;
+    padding-top:10px;
+    margin-left: 2px;
+}
+.dot-icon{
+    height: 10px;
+}
+.innerCurv{
+    display: inline-block;
+    border-radius: 50%;
+    color: #ffffff;
+    vertical-align: middle;
+    width: 20px;
+    height: 22px;
+    margin-left: -8px;
+    margin-top: -4px;
+    background-color: #c1d82e;
+    padding: 12px;
+    color: #222222;
+}
+.selectedtxt{
+    color: #222222;
+    margin: -21px 0 0 0;
+}
+
+.images {
+    display: inline;
+    margin: 0px;
+    padding: 0px;
+    vertical-align:middle;
+    width: 93px;
+}
+#img-content{
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    top: 15px;
+    height: auto;
+    max-width: auto;
+    overflow-y: hidden;
+    overflow-x:auto;
+    word-wrap:normal;
+    white-space:nowrap;
+    width: 100px;
+    height: 93px;
+    margin: 0 auto;
+    background: #fff;
+    text-align: center;
+}
+.dotedBg{
+    background:url(../img/bar_icon.png) left 50% repeat-x!important; 
+    background-size: 150px!important;
+    text-align: center;
+}
+/* .img-div{
+    width: 340px;
+    margin-left: -23px;
+} */
+.curvtxtdiv1{
+    text-align: center;
+}
+.curvtxtdiv2{
+    padding-left: 20px;
+}
+.curvtxtdiv3{
+   
+}
+.steps-txt{
+    font-size: 18px;
+}
+.visible-item{
+    visibility: hidden;
+}
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 99999; /* Stay on top */
+    top: 0;
+    left: 0;
+    background: url(../img/menu_bg.png) no-repeat left;
+    background-size: 103%;
+    background-color: #fff; /* white*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+.menuinactive{
+    color: #D6EAD6 !important;
+}
+.menu-item{
+  background: #ffffff !important;
+}
+
+/* The navigation menu links */
+.menu-item a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    transition: 0.3s;
+    font-family: futura;
+    text-align: center;
+}
+
+/* When you mouse over the navigation links, change their color */
+.menu-item a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    color: #9c9c9c;
+    font-size: 24px;
+}
+.sidenav a:hover, .offcanvas a:focus {
+    color: #000;
+}
+.menu-logo{
+    text-align: center;
+}
+.menu_topbar{
+    margin-top: 8px;
+}
+.curv-disabled{
+    background: #696565;
+    border: none;
+}
+.chkd-icon{
+    height: 14px;
+    margin-left: -2px;
+    margin-top: -2px;
+}
+.threeImg{
+    /* margin-top: -60px !important; */
+}
+.modal-header {
+    border-bottom: none !important;
+}
+
+.modal{
+    top: 22%;   
+    margin: auto;
+    border: none !important;
+}
+.dialogImg{
+    display: block;
+    margin: 0 auto;
+    width: 45%;
+}
+.modal-footer {
+    padding: 0px;
+    border-top: none !important; 
+}
+.btn{
+    border-radius: 0px;
+}
+.leftbtn{
+    float: left;
+    width: 50%;
+    background: #b8bfbc;
+    border-radius: 0 0 0 5px;
+    color:#ffffff;
+}
+.rightbtn{
+    width: 50%;
+    margin-left: 0px !important;
+    background: #27a5f2;
+    border-radius: 0 0 5px 0;
+    color:#ffffff !important;
+}
+.footer-disable{
+    background-color: #b2cbda !important;
+}
+.btncenter{
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    background: #27a5f2;
+    border-radius: 0 0 5px 0;
+    color: #ffffff !important;
+}
+.otperr{
+    display: block;
+    text-align: center;
+    font-family: futura;
+    color: red;
+    font-size: 12px;
+    margin-top:10px;
+}
+.two-digit{
+    margin-left: -4px;
+}    
+
+/* iPhone 320px (iphone 5) [portrait + landscape] */
+@media only screen and (min-device-width: 320px) and (max-device-width: 358px){
+    .headercont-div{
+         margin-top:25px !important;
+    }
+}
+
+/* iPhone 375px (iphone 6) [portrait + landscape] */
+@media only screen and (min-device-width: 375px) and (max-device-width: 410px){
+      .headercont-div{
+         margin-top:25px !important;
+    }
+    /* .card{
+        height: 450px;
+    } */
+}
+
+/* iPhone 414px (iphone 6 plus see the down one also for Nexus 6. Its taking the same value for both) [portrait + landscape] */
+@media only screen and (min-device-width: 412px) and (max-device-width: 736px){
+ .headercont-div{
+         margin-top:25px !important;
+    }
+    
+}
+
+/* Nexus-6 and iphone 6 plus and also check with Nexus-4 382px(Instead of 412px)  [portrait + landscape] */
+@media only screen and (min-device-width: 382px) and (max-device-width: 768px){
+    .headercont-div{
+         margin-top:25px !important;
+    }
+}
+
+.curv3{
+    margin-left: -4px;
+}
+
+.curv3up{
+    margin-top: 15px !important;
+}
+.menuactive{
+    color:rgba(20, 70, 50, 0.78) !important;
+}
+.hide-elm{
+    display:none !important;
+}
+.mm-menu.mm-offcanvas{
+   /*  z-index: 10000 !important; */
+}
+.mm-panel.mm-hasnavbar .mm-navbar{
+    display: none !important;
+}
+
+.mm-listview>li:not(.mm-divider):after{
+    border-bottom-width: 0px !important;
+    border-bottom-style: none !important;
+}
+.mm-slideout{
+    z-index: inherit !important;
+    height:100%;
+}
+.tsdiv{
+    padding-left: 2px !important;
+}
+.tsimg{
+    width: 89%;
+    background: #ffffff;
+}
+.tsrow{
+        margin-top: 5px;
+}
+.one-digit{
+        margin-left: 0px !important;
+}
+.viewbg{
+   background: url(../img/view_all_icon.png) no-repeat;
+    height: 39px;
+    width: 47%;
+    background-size: 89px;
+}
+.hidebg{
+    background: url(../img/hide_icon.png) no-repeat;
+    height: 34px;
+    width: 37%;
+    background-size: 70px;
+}
+.card {
+    -ms-overflow-style: none;  // IE 10+
+    overflow: -moz-scrollbars-none;  // Firefox
+}
+.card::-webkit-scrollbar { 
+    display: none;  // Safari and Chrome
+}
+.wifi-img{
+    height: 28px;
+    width: 9%;
+    background-size: 20px !important;
+}
+.wifi-enable{
+     background: url(../img/wifi_icon.png) no-repeat;
+}
+.wifidisable-img{
+    background: url(../img/wifi-disabled_icon.png) no-repeat;
+}
+.rightbtnfull{
+    width: 100%;
+    margin-left: 0px !important;
+    background: #27a5f2;
+    border-radius: 0 0 5px 0;
+    color: #ffffff !important;
+}
+/*s5 target device*/
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3){
+    .innerCurv {
+     margin-top: -3px !important;
+    }
+
+    .header-pane{
+        margin-top: 12px !important;
+    }
+}
+
+
+#mydiv {  
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:1000;
+    background-color:grey;
+    opacity: .8;
+ }
+
+.ajax-loader {
+    position: absolute;
+    left: 50%;
+    top: calc(50% - 70px);
+    width:13%;
+    margin-left: -32px; /* -1 * image width / 2 */
+    margin-top: -32px;  /* -1 * image height / 2 */
+    display: block;     
+}
+.loadermsg{
+    color: #ffffff;
+    font-family: futura;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: calc(50% - 70px);
+    margin-top: 20px;
+    display: block;
+    padding: 0 50px;
+}
+
+.exitMes{
+	border-radius: 50px;
+    padding: 5px 15px;
+    background-color: rgba(0,0,0,.6);
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    z-index: 9999999;
+    left: calc(50% - 66px);
+    opacity: 0;
+}
+
+.FadeIn-FadeOut {
+    -webkit-animation: fadeInOut 4s linear forwards;
+}
+
+@keyframes fadeInOut {
+  20% {
+    opacity: .6;
+  }
+  80% {
+    opacity: .7;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+/*About us screen*/
+.abtPage h3{
+    font-weight: 600;
+    line-height: 2;
+    font-size: 20px;
+}
+.abtHeader{
+    position: absolute;
+    top: 0;
+    background-color: #005030;
+    height: 60px;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+.abtfooter{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 99999999;
+    left:0;
+}
+.abtBtn{
+    width: 100%;
+    background-color: #005030;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px;
+    border: none;
+}
+.abtLogo{
+    margin: 0 auto;
+    text-align: center;
+}
+.abtLogo img{
+    height: 100px;
+    margin-top: 57vw;
+}
+.abtLogo h2{
+    font-weight: bold;
+    line-height: .5;
+}
+
+/*Language Toggle*/
+
+.onoffswitch {
+    position: relative; width: 65px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #FFF; border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 32px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "EN";
+    padding-left: 10px;
+    background-color: #005030; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "PT";
+    padding-right: 10px;
+    background-color: #005030; color: #FFFFFF;
+    text-align: right;
+}
+
+/* Debug Mode Implementation (25-Jun-2018 by Zameer) */
+.debugswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.debugswitch-inner:before, .debugswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 32px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.debugswitch-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #005030; color: #FFFFFF;
+}
+.debugswitch-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #005030; color: #FFFFFF;
+    text-align: right;
+}
+/* Debug Mode Implementation (25-Jun-2018 by Zameer) Over */
+
+.onoffswitch-switch {
+    display: block;
+    width: 28px;
+    height: 28px;
+    margin: 3px 1px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    /*right: 56px;*/
+    border: 1px solid #FFF; border-radius: 20px;
+    transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 2px;
+}
+
+/*End language Toggle*/
+
+.equipmentPage .btn{
+    padding: 6px 0px!important;
+}
+.equipmentPage .row.footerBtns{
+    margin-right: 5px;
+    margin-left: -5px;
+}
+.footerBtns input{
+    font-size: 14px;
+}
+.equipmentPage .col-xs-5, .col-xs-6{
+    padding-left: 0!important;
+}
+.equipmentPage .equipmentBtns .row{
+    margin-right: 0!important;
+}
+.eqCheckBoxContainer{
+    margin-bottom: 10px;
+    display: -webkit-box;
+}
+.eqpCheckBox input{
+    position: relative;
+    width: 25px;
+    height: 25px;
+    padding: 2px;    
+}
+.eqpCheckBox span{
+    position: absolute;
+    margin-left: 7px;
+    margin-top: 7px;
+    font-size: 15px;
+}
+.error{
+    color: red;
+    border: 1px solid #ff6868;
+}
+
+@media only screen and (min-device-width: 400px) and (max-device-width : 1024px){
+    .nav-pane{
+        padding: 5px 9px;
+    }
+}
+
+i {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 5px;
+}
+
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+
+
+

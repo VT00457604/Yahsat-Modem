@@ -1,0 +1,13 @@
+<app-header rworder="rworder"/>
+<!--  <div class="row steps-txt" >
+	<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+		<span class="content-span"><i class="arrow left" ng-click="historygo()" style="float:right" ></i></span>
+	</div>
+</div>-->
+<app-content class="app-content" redirect='redirect()'/>
+<modal-dialog dialogmsg="dialogmsg" dialogimg="dialogimg" modalin="modalin" footerbtn="footerbtn" nextpage = "nextPageUrl" successbtn = "successbtn" errorbtn = 'errorbtn' erroraction="errorAction()" errbtnshow = 'errbtnshow' hotline="hotline" nextpage="nextpage" successaction = 'successaction(val);'></modal-dialog>
+<app-footer action="returnOrder()" is-disable="footerdisable"/>
+<div id="mydiv" ng-show="loaderImg">
+    <img src="img/loader.gif" class="ajax-loader"/>
+    <p class="loadermsg">{{loadermsg | translate}}<br>{{timer}}</p>
+</div>

@@ -1,0 +1,90 @@
+<div class="container-fluid orderHeader-div">
+	<div class="row ">
+			<div class="col-xs-12 order-content">
+				<div ng-click="navgateToTS();"><img src="img/tick_icon.png" class="ordertick-icon pull-right" ></div>
+				<span class="header-title" >Order Summary</span>
+				
+			</div>			
+	</div>   
+</div>
+<div class="order-card card">
+	<div class="order-container app-container">
+		 <div class="row steps-txt">
+	    	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"> 
+				<span class="content-span order-span"> Order Details </span>
+			</div>
+    	</div>
+
+    	 <div class="row steps-txt">
+    	 	<div class="col-xs-6 beamDiv">
+    	 		<span class="orderItem">Beam ID</span>
+    	 		<span class="orderVal">{{beamId}}</span>
+    	 	</div>
+    	 	<div class="col-xs-6 beamDiv">
+    	 		<span class="orderItem">SIC</span>
+    	 		<span class="orderVal">{{sic}}</span>
+    	 	</div>
+    	 </div>
+
+    	 <div class="row steps-txt">
+    	 	<div class="col-xs-6 beamDiv">
+    	 		<span class="orderItem">Order Id</span>
+    	 		<span class="orderVal">{{orderId}}</span>
+    	 	</div>
+    	 	<div class="col-xs-6 beamDiv">
+    	 		<span class="orderItem">Latitude</span>
+    	 		<span class="orderVal">{{latitude}}</span>
+    	 	</div>
+    	 </div>
+
+    	  <div class="row steps-txt">
+    	 	<div class="col-xs-6 beamDiv">
+    	 		<span class="orderItem">Longitude</span>
+    	 		<span class="orderVal">{{longitude}}</span>
+    	 	</div>
+    	 	<div class="col-xs-6 beamDiv">
+    	 		<span class="orderItem">Orbital</span>
+    	 		<span class="orderVal">{{orbital}}</span>
+    	 	</div>
+    	 </div>
+
+    	<div class="row order-inv steps-txt">
+	    	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"> 
+				<span class="content-span order-span"> Inventory Details </span>
+			</div>
+    	</div>
+
+    	<div class="row invdiv steps-txt" >
+    		<h5 ng-show="inventory==undefined" style='padding:15px 15px 5px 15px; color:red; font-weight:normal'>Inventory details not found</h5>
+    		<div ng-show="inventory!=undefined" class="col-xs-12">
+    			<table class="table table-responsive borderless orderInvTable">
+    				<thead>
+    					<tr>
+							<th class="orderth">Equipment</th>
+							<!-- <th class="orderth">Serial No</th> -->
+							<th class="orderth">Model No</th>
+							<th class="orderth">Quantity</th>
+						</tr>
+    				</thead>
+    				<tbody>
+    					<tr ng-repeat="item in inventory track by $index">
+							<!-- <td class="invval">{{item.equipmenttype}}</td>
+							<td class="invval">{{item.equipmentserialno}}</td>
+							<td class="invval">{{item.equipmentmodelno}}</td>
+							<td class="invval">{{item.radioequipmenttype}}</td> -->
+                            <td class="invval">{{item.invtype}}</td>
+                            <!-- <td class="invval">{{item.invsn}}</td> -->
+                            <td class="invval">{{item.Model}}</td>
+                            <td class="invval">{{item.quantity}}</td>
+						</tr>
+    				</tbody>
+    			</table>
+    		</div>
+    	</div>
+
+	</div>
+
+	
+
+
+</div>

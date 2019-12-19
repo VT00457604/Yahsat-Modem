@@ -1,0 +1,86 @@
+<app-header rworder="rworder"/>
+    <div class="container equipmentPage">
+        <div id="card" class="card">
+            <div class="app-container">
+                <div class="row steps-txt">
+                    <!--<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <span class="content-span">{{"STEPS" | translate}}</span>
+                    </div>-->
+					<!-- Implemented by Vijay on 13th-July-2018 to display page title accordingly -->
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<i class="arrow left" onClick="history.go(0)" style="float:right;" ng-if="equipmentCheckButton == 'Equipment Exchange'"></i>
+						<span class="content-span" ng-if="equipmentCheckButton == 'Validate'">{{"STEPS" | translate}} - Scan Installed Inventory</span>
+                        <span class="content-span" ng-if="equipmentCheckButton == 'Equipment Exchange'">{{"STEPS" | translate}} - Scan New Inventory </span>
+                    </div>
+					<!-- Over -->
+                </div>
+                <div class="row step-row">
+                    <div>
+                        <div ng-repeat= "step in stepsObj">
+                            <img src="img/dot_icon.png" class="dot-icon">
+                            <span class="step-txt">{{step | translate}}
+                            </span>
+                            <p></p>
+                        </div>
+                    </div>                    
+                </div>                
+            </div>
+            <div class="eqCheckBoxContainer">
+                <div class="col-xs-4 form-check eqpCheckBox" style="float:none">
+                    <input type="checkbox" class="form-check-input" ng-model="modemChkBox"  ng-disabled = 'isCertified || equipmentCheckButton == "Equipment Exchange"' >
+                    <span>Modem</span>
+                </div>
+                <div class="col-xs-4 form-check eqpCheckBox" style="float:none">
+                    <input type="checkbox" class="form-check-input" ng-model="oduChkBox" ng-disabled = 'isCertified || equipmentCheckButton == "Equipment Exchange"'>
+                    <span>ODU</span>
+                </div>
+                <div class="col-xs-4 form-check eqpCheckBox" style="float:none">
+                    <input type="checkbox" class="form-check-input" ng-model="antennaChkBox" ng-disabled = 'isCertified || equipmentCheckButton == "Equipment Exchange"'>
+                    <span>Antenna</span>
+                </div>
+            </div>
+            <div class="equipmentBtns paddingLeft5">
+                <div class="row" style="margin-bottom:10px;">
+                    <div class="col-xs-7">
+                        <input type="text" id="eqmodem" class="form-control" placeholder="" ng-model="inventory.modem" ng-class="{'error':modemNotValid}">
+                    </div>
+                    <div class="col-xs-5">
+                        <button type="submit" class="btn btn-primary" ng-disabled="!modemChkBox || isCertified" style="width:135px" ng-click="scanner('modem')">{{"SCAN_MODEM" | translate}}</button>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom:10px;">
+                    <div class="col-xs-7">
+                        <input type="text" id="eqodu" class="form-control" placeholder="" ng-model="inventory.odu" ng-class="{'error':oduNotValid}">
+                    </div>
+                    <div class="col-xs-5">
+                        <button type="submit" class="btn btn-primary" ng-disabled="!oduChkBox || isCertified" style="width:135px" ng-click="scanner('odu')">{{"SCAN_ODU" | translate}}</button>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom:30px;">
+                    <div class="col-xs-7">
+                        <input type="text" id="eqantenna" class="form-control" placeholder="" ng-model="inventory.antenna" ng-class="{'error':antennaNotValid}">
+                    </div>
+                    <div class="col-xs-5">
+                        <button type="submit" class="btn btn-primary" ng-disabled="!antennaChkBox || isCertified" style="width:135px" ng-click="scanner('antenna')">{{"SCAN_ANTENNA" | translate}}</button>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row footerBtns">
+                <div class="col-xs-6">
+                    <input type="button" class="btn btn-secondary btn-lg btn-block" style="bottom: 0px;background-color: #e2e1e1;box-shadow: 2px 2px 3px #b5b5b5;margin: 10px 10px;" ng-click="orderDiscontinue()" value="{{'TOA_ACTIVITY'|translate}}" />
+                </div>
+                <div class="col-xs-6">
+                	<button class="btn btn-secondary btn-lg btn-block" style="bottom: 0px;background-color: #e2e1e1;box-shadow: 2px 2px 3px #b5b5b5;margin: 10px 10px;font-size:14px;" ng-disabled="(modemChkBox==true && inventory.modem=='') || (oduChkBox==true && inventory.odu=='') || (antennaChkBox==true && inventory.antenna=='') || (modemChkBox==false && oduChkBox==false && antennaChkBox==false)" ng-click="invValidations()" ng-if="equipmentCheckButton == 'Validate'">Validate</button>
+                	<button class="btn btn-secondary btn-lg btn-block" style="bottom: 0px;background-color: #e2e1e1;box-shadow: 2px 2px 3px #b5b5b5;margin: 10px 10px;font-size:14px;" ng-disabled="(modemChkBox==true && inventory.modem=='') || (oduChkBox==true && inventory.odu=='') || (antennaChkBox==true && inventory.antenna=='') || (modemChkBox==false && oduChkBox==false && antennaChkBox==false)" ng-click="invValidation()" ng-if="equipmentCheckButton == 'Equipment Exchange'">{{equipmentCheckButton}}</button>
+                    <!--  <input type="button" class="btn btn-secondary btn-lg btn-block" style="bottom: 0px;background-color: #e2e1e1;box-shadow: 2px 2px 3px #b5b5b5;margin: 10px 10px;" ng-disabled="(modemChkBox==true && inventory.modem=='') || (oduChkBox==true && inventory.odu=='') || (antennaChkBox==true && inventory.antenna=='') || (modemChkBox==false && oduChkBox==false && antennaChkBox==false)" ng-click="invValidation()" value="{{'SCAN_OLD_INVENTORY'|translate}}" />-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <modal-dialog dialogmsg="dialogmsg" showotp="showotp" dialogimg="dialogimg" modalin="modalin" footerbtn="footerbtn" nextpage = "nextPageUrl" successbtn = "successbtn" errorbtn = 'errorbtn' errbtnshow = 'errbtnshow' otperrmes="otpMes" otperrshow="otperrshow" successaction = 'successaction(val);'></modal-dialog>
+    <app-footer action="returnOrder()" is-disable="footerdisable"/>
+    <div id="mydiv" ng-show="loaderImg">
+        <img src="img/loader.gif" class="ajax-loader"/>
+        <p class="loadermsg">{{loadermsg | translate}}<br>{{timer}}</p>
+    </div>

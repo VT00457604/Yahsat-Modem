@@ -1,0 +1,90 @@
+.order-content{
+	margin-top: 8px;
+}    
+.orderHeader-div{
+	background-color: #005030;
+    height: 100px;
+}
+.order-container{
+	padding:18px;
+}
+.order-card{
+	height: 530px;
+}
+.orderVal{
+	display: block;
+	padding-top: 5px;
+	color:#222222 !important;
+	font-size: 15px;
+}
+.orderItem{
+	font-size: 12px !important;
+	color: #7c7c7c;
+}
+.beamDiv{
+	padding-top: 10px;
+}
+.order-inv{
+	padding-top:20px;
+}
+table, thead, tr, td, th{
+	border: none !important;
+} 
+
+.orderInvTable{
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+.orderInvTable th{
+    color: #7c7c7c !important;
+}
+.invval{
+	color:#222222;
+	font-size: 15px;
+}
+.orderth{
+	font-weight: normal;
+	font-size: 12px;
+}
+.orderbckbtn{
+	 background: url(../img/tick_icon.png) no-repeat;
+}
+.ordertick-icon{
+	height: 20px;
+	margin-top: 5px;
+}
+.order-span{
+	font-size: 18px;
+}
+.invdiv{
+	margin-top:2px !important;
+}
+
+/* iPhone 320px (iphone 5) [portrait + landscape] */
+@media only screen and (min-device-width: 320px) and (max-device-width: 358px){
+    .order-content{
+		margin-top: 20px !important;
+	} 
+}
+
+/* iPhone 375px (iphone 6) [portrait + landscape] */
+@media only screen and (min-device-width: 375px) and (max-device-width: 410px){
+    .order-content{
+		margin-top: 20px !important;
+	} 
+}
+
+/* iPhone 414px (iphone 6 plus see the down one also for Nexus 6. Its taking the same value for both) [portrait + landscape] */
+@media only screen and (min-device-width: 412px) and (max-device-width: 736px){
+ 	.order-content{
+		margin-top: 20px !important;
+	} 
+    
+}
+
+/* Nexus-6 and iphone 6 plus and also check with Nexus-4 382px(Instead of 412px)  [portrait + landscape] */
+@media only screen and (min-device-width: 382px) and (max-device-width: 768px){
+    .order-content{
+		margin-top: 20px !important;
+	} 
+}

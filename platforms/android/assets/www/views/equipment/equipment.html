@@ -1,0 +1,64 @@
+<app-header rworder="rworder"/>
+    <div class="container equipmentPage">
+        <div id="card" class="card">
+            <div class="app-container">
+            	<!-- <div class="row steps-txt">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						 <span class="content-span"><i class="arrow left" onClick="history.go(-1)" style="float:right" ></i></span>
+						<span class="content-span"><i class="arrow left" ng-click="historygo()" style="float:right" ></i></span>
+					</div>
+				</div>-->
+                <div class="row steps-txt">
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <span class="content-span">{{"STEPS" | translate}}</span>
+                    </div>
+                </div>
+                <div class="row step-row">
+                    <div >
+                        <div ng-repeat= "step in stepsObj">
+                            <img src="img/dot_icon.png" class="dot-icon">
+                            <span class="step-txt">{{step | translate}}
+                            </span>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="equipmentBtns paddingLeft5">
+                <div class="row" style="margin-bottom:10px;">
+                    <div class="col-xs-7">
+                        <input type="text" class="form-control" placeholder="" ng-model="inventory.modem" ng-class="{'error':modemNotValid}">                    
+                    </div>
+                    <div class="col-xs-5">
+                        <button type="submit" class="btn btn-primary" style="width:135px" ng-click="scanner('modem')">{{"SCAN_MODEM" | translate}}</button>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom:10px;">
+                    <div class="col-xs-7">
+                        <input type="text" class="form-control" placeholder="" ng-model="inventory.odu" ng-class="{'error':oduNotValid}">
+                    </div>
+                    <div class="col-xs-5">
+                        <button type="submit" class="btn btn-primary" style="width:135px" ng-click="scanner('odu')">{{"SCAN_ODU" | translate}}</button>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom:30px;">
+                    <div class="col-xs-7">
+                        <input type="text" class="form-control" placeholder="" ng-model="inventory.antenna" ng-class="{'error':antennaNotValid}">
+                    </div>
+                    <div class="col-xs-5">
+                        <button type="submit" class="btn btn-primary" style="width:135px" ng-click="scanner('antenna')">{{"SCAN_ANTENNA" | translate}}</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row footerBtns">
+                <div class="col-xs-6">
+                    <input type="button" class="btn btn-secondary btn-lg btn-block" style="bottom: 0px;background-color: #e2e1e1;box-shadow: 2px 2px 3px #b5b5b5;margin: 10px 10px;" ng-click="orderDiscontinue()" value="{{'TOA_ACTIVITY'|translate}}" />
+                </div>
+                <div class="col-xs-6">
+                    <input type="button" class="btn btn-secondary btn-lg btn-block" style="bottom: 0px;background-color: #e2e1e1;box-shadow: 2px 2px 3px #b5b5b5;margin: 10px 10px;" ng-disabled="inventory.modem=='' || inventory.odu=='' || inventory.antenna==''" ng-click="invValidation()" value="{{'VALIDATE_INVENTORY'|translate}}" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <modal-dialog dialogmsg="dialogmsg" showotp="showotp" dialogimg="dialogimg" modalin="modalin" footerbtn="footerbtn" nextpage = "nextPageUrl" successbtn = "successbtn" errorbtn = 'errorbtn' errbtnshow = 'errbtnshow' otperrmes="otpMes" otperrshow="otperrshow" successaction = 'successaction(val);'></modal-dialog>
+    <app-footer action="returnOrder()" is-disable="footerdisable"/>

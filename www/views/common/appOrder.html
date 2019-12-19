@@ -1,0 +1,29 @@
+<div class="container-fluid orderHeader-div">
+	<div class="row ">
+			<div class="col-xs-12 header-content">
+				<span class="header-title" >{{headerObj.title}}</span>
+			</div>
+			
+	</div>   
+</div>
+<div class="order-card card">
+	<div class="app-container">
+		 <div class="row steps-txt">
+	    	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> 
+				<span class="content-span"> Order Details </span>
+			</div>
+    	</div>
+	</div>
+
+	
+    <div class="row step-row">
+	 	<div >
+	 		<div ng-repeat= "step in steps">
+	 			<img src="img/dot_icon.png" class="dot-icon">
+	 			<span class="step-txt">{{step}}</span>
+	 			<p></p>
+	 		 </div>
+	 	</div>
+	 </div>
+
+</div>

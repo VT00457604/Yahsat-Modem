@@ -1,0 +1,41 @@
+<div class="container">
+	<div id="card" class="card" card-height>
+		<div class="app-container">			
+			<div class="row steps-txt">
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+					<span class="content-span"> {{"STEPS"|translate}} </span>
+				</div>
+			</div>
+			<div class="row step-row">
+				<div >
+					<div ng-repeat= "step in steps">
+						<img src="img/dot_icon.png" class="dot-icon">
+						<span class="step-txt">{{step|translate}}
+						</span>
+						<p></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-xs-12">
+			<div class="img-div col-xs-12 dotedBg" ng-class="{'threeImg': headerObj.expandedStep}">
+				<div>
+					<div id="img-content">
+						
+						<a target="self" ng-click="redirect();">
+							<img ng-src="{{imgsrc}}" class="nav-icon images"/>
+						</a>
+					</div>
+					<div class="row img-title" ng-click="navigateToTs();">
+						<span class="img-txt">{{headerObj.subTitle|translate}}</span>
+					</div>
+					<div class="row img-title">
+					 	<br/><br/><b>{{versions}}</b>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>

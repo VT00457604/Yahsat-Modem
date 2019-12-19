@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <!--  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">-->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta http-equiv='cache-control' content='no-cache'>
+		<meta http-equiv='expires' content='0'>
+		<meta http-equiv='pragma' content='no-cache'>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/jquery.mmenu.all.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/order.css">
+        <script type="text/javascript" src="js/fixedJS/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="js/fixedJS/bootstrap/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/fixedJS/jquery/jquery.mmenu.all.min.js"></script>
+        <script type="text/javascript" src="js/fixedJS/angular/angular.min.js"></script>
+        <script  type="text/javascript" src="js/fixedJS/angular/angular-route.min.js"></script>
+        <script type="text/javascript" src="js/fixedJS/angular/angular-translate.js"></script>
+        <script type="text/javascript" src="js/fixedJS/angular/angular-translate-loader-static-files.js"></script>
+        <script type="text/javascript" src="js/fixedJS/angular/angular-translate-handler-log.js"></script>
+        <script type="text/javascript" src="js/fixedJS/angular/angular-translate-loader-url.js"></script>
+        <script type="text/javascript" src="js/fixedJS/angular/angular-translate-storage-local.js"></script>
+        <script type="text/javascript" src="js/fixedJS/angular/angular-translate-storage-cookie.js"></script>
+        
+        <title>Yahsat</title>
+        <script type="text/javascript">    
+            handleOpenURL = function(url) {
+                if (decodeURIComponent(url).indexOf("ntc-master://toa") >= 0) {
+                    setTimeout(function() {
+                        if (localStorage.getItem('currentPage') == 'login') {
+                            window.localStorage.setItem('TOAData', decodeURIComponent(url));
+                            window.dispatchEvent(new Event('toa'));
+                        }else if(localStorage.getItem('currentPage') == 'assesssite'){
+                            window.dispatchEvent(new CustomEvent('assess', {
+                                detail: decodeURIComponent(url)
+                            }));
+                        } else if (localStorage.getItem('currentPage') == 'equipment') {
+                            window.dispatchEvent(new CustomEvent('equipment', {
+                                detail: decodeURIComponent(url)
+                            }));
+                        }
+                    }, 0);
+                } else if (decodeURIComponent(url).indexOf("ntc-master://pointandplay") >= 0 && decodeURIComponent(url).indexOf("//yahsat") <= -1) {
+                    setTimeout(function() {
+                        window.localStorage.setItem('PNPData', url);
+                        window.dispatchEvent(new Event('pointandplay'));
+                    }, 0);
+                };
+            };
+        </script>
+    </head>
+    <body ng-app="yahsatApp" class="bgColor">
+        <div class="loader-div" ng-show="AILoading">
+            <div class="loader-img" class=""><img src="img/loader.gif" style="width:20%"></div>
+        </div>
+        <div ng-view style="overflow-x: hidden; height:100%;"></div>
+        <div class='exitMes'>Press twice to exit</div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script  type="text/javascript" src="js/fixedJS/webintent.js"></script> 
+        <script  type="text/javascript" src="js/fixedJS/hash.js"></script>
+        <script  type="text/javascript" src="js/fixedJS/moment-timezone.min.js"></script>   
+        
+        <script  type="text/javascript" src="js/applicationJS/app.js"></script>
+
+        <script type="text/javascript" src="js/applicationJS/services/sharedService.js"></script>
+
+         <script type="text/javascript" src="js/applicationJS/services/cmsngService.js"></script>
+
+        <script type="text/javascript" src="js/applicationJS/directives/common/cardHeight.js"></script>
+        <script type="text/javascript" src="js/applicationJS/directives/common/appHeaderDirective.js"></script>
+        <script type="text/javascript" src="js/applicationJS/directives/common/appFooterDirective.js"></script>
+        <script type="text/javascript" src="js/applicationJS/directives/common/appContentDirective.js"></script>
+        <script type="text/javascript" src="js/applicationJS/directives/modal/modalDialogDirective.js"></script>
+        <script type="text/javascript" src="js/applicationJS/controllers/login/login.js"></script>
+        <script type="text/javascript" src="js/applicationJS/controllers/order/order.js"></script>
+        <script type="text/javascript" src="js/applicationJS/controllers/equipment/equipment.js"></script>
+        <script type="text/javascript" src="js/applicationJS/controllers/equipment/equipment_at.js"></script>
+        <script type="text/javascript" src="js/applicationJS/controllers/equipment/equipment_re.js"></script>
+        <script type="text/javascript" src="js/applicationJS/controllers/equipment/equipment_ra.js"></script>
+        <script type="text/javascript" src="js/applicationJS/controllers/antenna/antenna.js"></script>
+        <script type="text/javascript" src="js/applicationJS/controllers/commissioning/commissioning.js"></script>
+        <script type="text/javascript" src="js/applicationJS/controllers/material/material.js"></script>
+        <script type="text/javascript" src="js/applicationJS/controllers/about/aboutCtrl.js"></script>
+    </body>
+</html>

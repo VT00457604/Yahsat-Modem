@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.techM.YahsatRetail" version="1.0.30" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="WebIntent">
+        <param name="android-package" value="com.borismus.webintent.WebIntent" />
+    </feature>
+    <feature name="startApp">
+        <param name="android-package" value="com.lampa.startapp.startApp" />
+    </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="Globalization">
+        <param name="android-package" value="org.apache.cordova.globalization.Globalization" />
+    </feature>
+    <feature name="NetworkStatus">
+        <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="BarcodeScanner">
+        <param name="android-package" value="com.phonegap.plugins.barcodescanner.BarcodeScanner" />
+    </feature>
+    <name>Yahsat</name>
+    <description>
+        Yahsat plans to introduce a new High Throughput Satellite (HTS) services.
+    </description>
+    <author email="VT00457604@techmahindra.com" href="">
+        Vijay TechM Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-intent href="market:*" />
+    <icon density="ldpi" src="/www/img/icons/android/48.png" />
+    <icon density="mdpi" src="/www/img/icons/android/72.png" />
+    <icon density="hdpi" src="/www/img/icons/android/96.png" />
+    <icon density="xhdpi" src="/www/img/icons/android/144.png" />
+    <splash density="land-hdpi" src="/www/img/splash/android/1280x800.png" />
+    <splash density="land-ldpi" src="/www/img/splash/android/1280x800.png" />
+    <splash density="land-mdpi" src="/www/img/splash/android/1280x800.png" />
+    <splash density="land-xhdpi" src="/www/img/splash/android/1280x800.png" />
+    <splash density="port-hdpi" src="/www/img/splash/android/320x640.png" />
+    <splash density="port-ldpi" src="/www/img/splash/android/320x640.png" />
+    <splash density="port-mdpi" src="/www/img/splash/android/640x1136.png" />
+    <splash density="port-xhdpi" src="/www/img/splash/android/640x1136.png" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="android-usesCleartextTraffic" value="true" />
+    <preference name="orientation" value="portrait" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="splashscreen" value="screen" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="splashScreenDelay" value="5000" />
+    <preference name="StatusBarOverlaysWebView" value="true" />
+    <preference name="StatusBarBackgroundColor" value="#000000" />
+    <preference name="StatusBarStyle" value="lightcontent" />
+    <preference name="AndroidLaunchMode" value="singleInstance" />
+</widget>

@@ -524,7 +524,7 @@ app.controller('commissioningCtrl', function($scope, $location, $timeout, shared
                                                             alert("ORDER TYPE : "+JSON.stringify(orderType));
                                                         }
                                                         sharedData.uninstall();
-                                                     }
+                                                     } 
 	                                                $scope.dialogmsg = 'COMMISSIONING_DONE';
 	                                                $scope.dialogimg = "img/done_icon.png";
 	                                                $scope.footerbtn = false;
